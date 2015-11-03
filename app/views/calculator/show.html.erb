@@ -1,0 +1,24 @@
+
+  
+<div id="calculator">
+	<!-- Screen -->
+	 
+		<div class="screen"><%= @result %></div>
+	
+	<div class="keys">
+		<!-- operators and other keys -->
+		  <%= link_to '+', operator_path('+'), class: 'operator' %>
+	    <%= link_to '-', operator_path('-'), class: 'operator' %>
+		  <%= link_to '÷', operator_path('÷'), class: 'operator' %>
+		  <%= link_to 'x', operator_path('x'), class: 'operator' %>
+		
+		<% (0..9).each do |i| %>
+       <%= link_to i, number_path(i)%>
+    <% end %>
+	
+		 <%= link_to 'C', clear_path, class: 'clear'  %>
+		 <%= link_to '=', eval_path, class: 'eval' %>
+	</div>
+</div>
+</body>
+</html>
